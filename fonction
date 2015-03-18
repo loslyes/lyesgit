@@ -1,0 +1,49 @@
+<?php
+session_start();
+$_SESSION['post'] = $_POST;
+require('../fonctions.php');
+$bdd = connect_bdd();
+?>
+
+<html>
+	<head>
+	<title>Modifier profil</title>
+	<meta charset="UTF-8">
+	</head>
+	
+	<body>
+<?php
+	$logOff = $_SESSION['pseudo'];
+	//$reponse = $bdd->query("DELETE FROM pseudo WHERE nom='$supprimer'");
+	$reponse = $bdd->query("UPDATE comptes SET etat ='0' WHERE pseudo = '$logOff'"); 
+	unset($_SESSION);
+	unset($_COOKIE);
+	session_destroy();
+	echo "à bientôt !";
+	echo"<meta http-equiv='refresh' content='2;url=../vue/v_index.php' >";
+?>
+	<?php
+session_start();
+$_SESSION['post'] = $_POST;
+require('../fonctions.php');
+$bdd = connect_bdd();
+?>
+
+<html>
+	<head>
+	<title>Modifier profil</title>
+	<meta charset="UTF-8">
+	</head>
+	
+	<body>
+<?php
+	$logOff = $_SESSION['pseudo'];
+	//$reponse = $bdd->query("DELETE FROM pseudo WHERE nom='$supprimer'");
+	$reponse = $bdd->query("UPDATE comptes SET etat ='0' WHERE pseudo = '$logOff'"); 
+	unset($_SESSION);
+	unset($_COOKIE);
+	session_destroy();
+	echo "à bientôt !";
+	echo"<meta http-equiv='refresh' content='2;url=../vue/v_index.php' >";
+?>
+	
